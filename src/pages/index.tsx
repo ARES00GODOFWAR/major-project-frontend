@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import Editor, { Monaco } from "@monaco-editor/react";
 import { myCode } from "y/constants/constant";
 import { KDDTest } from "y/constants/KDDTest+";
-import axios from "axios";
+import axios, { AxiosResponse } from "axios";
 
 const Home: NextPage = () => {
   const [initialCode, setInitialCode] = useState(myCode);
@@ -16,7 +16,7 @@ const Home: NextPage = () => {
   const [remainingElements, setRemainingElements] = useState<{}[]>([]);
 
   const [expectedResults, setExpectedResults] = useState<any[]>([]);
-  const [response, setResponse] = useState([]);
+  const [response, setResponse] = useState<AxiosResponse>();
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
   const [responseSuccess, setResponseSuccess] = useState(false);
