@@ -8,10 +8,10 @@ import axios from "axios";
 const Home: NextPage = () => {
   const [initialCode, setInitialCode] = useState(myCode);
 
-  const [csvData, setCsvData] = useState([]);
+  const [csvData, setCsvData] = useState<string[][]>([]);
 
-  const [selectedCheckboxes, setSelectedCheckboxes] = useState([]);
-  const [remainingElements, setRemainingElements] = useState([]);
+  const [selectedCheckboxes, setSelectedCheckboxes] = useState<{ i: any; item: any[]; }[]>([]);
+  const [remainingElements, setRemainingElements] = useState<{}[]>([]);
 
   const [expectedResults, setExpectedResults] = useState([]);
   const [response, setResponse] = useState([]);
@@ -25,9 +25,6 @@ const Home: NextPage = () => {
     } else {
       setSelectedCheckboxes((prevSelected) =>
         prevSelected.filter((selected) => selected.i !== i)
-      );
-      setSelectedElements((prevSelectedElements: any[]) =>
-        prevSelectedElements.filter((element) => element !== item[41])
       );
     }
 
