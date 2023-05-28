@@ -13,7 +13,7 @@ const Home: NextPage = () => {
   const [selectedCheckboxes, setSelectedCheckboxes] = useState<{ i: any; item: any[]; }[]>([]);
   const [remainingElements, setRemainingElements] = useState<{}[]>([]);
 
-  const [expectedResults, setExpectedResults] = useState([]);
+  const [expectedResults, setExpectedResults] = useState<any[]>([]);
   const [response, setResponse] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
