@@ -10,7 +10,9 @@ const Home: NextPage = () => {
 
   const [csvData, setCsvData] = useState<string[][]>([]);
 
-  const [selectedCheckboxes, setSelectedCheckboxes] = useState<{ i: any; item: any[]; }[]>([]);
+  const [selectedCheckboxes, setSelectedCheckboxes] = useState<
+    { i: any; item: any[] }[]
+  >([]);
   const [remainingElements, setRemainingElements] = useState<{}[]>([]);
 
   const [expectedResults, setExpectedResults] = useState<any[]>([]);
@@ -84,10 +86,13 @@ const Home: NextPage = () => {
     ];
 
     const remainingItems = item.filter((_: any, index: any) => index !== 41);
-    const formattedObject = sumn.reduce((obj, key, index) => {
-      obj[key] = remainingItems[index];
-      return obj;
-    }, {});
+    const formattedObject: { [key: string]: any } = sumn.reduce(
+      (obj, key, index) => {
+        obj[key] = remainingItems[index];
+        return obj;
+      },
+      {}
+    );
 
     setRemainingElements((prevRemainingElements) => [
       ...prevRemainingElements,
