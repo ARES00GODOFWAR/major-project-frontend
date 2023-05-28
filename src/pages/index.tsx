@@ -19,7 +19,7 @@ const Home: NextPage = () => {
   const [error, setError] = useState("");
   const [responseSuccess, setResponseSuccess] = useState(false);
 
-  const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>, i: number, item: any[]) => {
+  const handleCheckboxChange = (e: any, i: any, item: any[]) => {
     if (e.target.checked) {
       setSelectedCheckboxes((prevSelected) => [...prevSelected, { i, item }]);
     } else {
@@ -86,7 +86,7 @@ const Home: NextPage = () => {
       "last_flag",
     ];
 
-    const remainingItems = item.filter((_: any, index: number) => index !== 41);
+    const remainingItems = item.filter((_: any, index: any) => index !== 41);
     const formattedObject = sumn.reduce((obj, key, index) => {
       obj[key] = remainingItems[index];
       return obj;
