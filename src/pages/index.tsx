@@ -19,7 +19,7 @@ const Home: NextPage = () => {
   const [error, setError] = useState("");
   const [responseSuccess, setResponseSuccess] = useState(false);
 
-  const handleCheckboxChange = (e, i, item) => {
+  const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>, i: number, item: any[]) => {
     if (e.target.checked) {
       setSelectedCheckboxes((prevSelected) => [...prevSelected, { i, item }]);
     } else {
