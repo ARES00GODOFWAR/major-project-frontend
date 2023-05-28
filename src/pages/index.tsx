@@ -90,7 +90,9 @@ const Home: NextPage = () => {
 
     for (let index = 0; index < sumn.length; index++) {
       const key = sumn[index];
-      formattedObject[key] = remainingItems[index];
+      if (key !== undefined) {
+        formattedObject[key] = remainingItems[index];
+      }
     }
 
     setRemainingElements((prevRemainingElements) => [
