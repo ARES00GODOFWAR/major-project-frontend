@@ -379,7 +379,7 @@ const Home: NextPage = () => {
                 )}
               </button>
             </div>
-            <div className="grid grid-cols-2">
+            <div className="grid sm:grid-cols-2">
               <div className="mt-6">
                 <h1 className="mb-6 mt-6 text-[28px] font-semibold tracking-tight text-white sm:text-[2rem]">
                   Expected Result
